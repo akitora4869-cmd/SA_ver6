@@ -1,0 +1,14 @@
+name: SkillArena
+version: '0.9.4'
+main: jp.skillarena.SkillArenaPlugin
+depend: [ProtocolLib]
+api-version: '1.20'
+author: SkillArena
+commands:
+  skills:
+    description: Open skill loadout menu
+  sa:
+    description: SkillArena commands
+permissions:
+  skillarena.admin:
+    default: op
