@@ -1,0 +1,20 @@
+name: Build SkillArena
+on:
+  push:
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+          cache: maven
+      - name: Package
+        run: mvn --batch-mode clean package
+      - uses: actions/upload-artifact@v4
+        with:
+          name: SkillArena-JAR
+          path: target/*.jar
